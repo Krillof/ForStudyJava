@@ -1,0 +1,9 @@
+text
+text
+not text
+and this is text
+run
+begin
+void
+f
+
