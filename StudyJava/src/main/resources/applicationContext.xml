@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:Race.properties"/>
+
+    <!--
+    <bean id="Car"
+          class="Lesson29_06.Truck">
+    </bean>
+
+    <bean id="Car1"
+          class="Lesson29_06.SportCar">
+    </bean>
+
+    <bean id="Ca2"
+          class="Lesson29_06.Jeep">
+    </bean>
+
+    <bean id="raceList"
+          class="Lesson29_06.Race">
+        <property name = "carList">
+            <list>
+                <ref bean="Car"/>
+                <ref bean="Ca2"/>
+                <ref bean="Car1"/>
+            </list>
+        </property>
+
+        <property name="color" value="${race.color}"/>
+        <property name="model" value="${race.model}"/>
+        
+    </bean>
+    -->
+
+    <bean id="carBean"
+            class="Lesson29_06.Truck"
+            scope="prototype"
+            init-method="initMethod"
+            destroy-method="destroyMethod"> <!-- Не срабатывает destroy. -->
+
+    </bean>
+
+    <bean id="carBean2"
+          class="Lesson29_06.Truck"
+          scope="singleton"
+          init-method="initMethod"
+          destroy-method="destroyMethod">
+
+    </bean>
+
+    <bean id="jBean"
+          class="Lesson29_06.Jeep"
+          factory-method="getJeep">
+
+    </bean>
+
+</beans>
