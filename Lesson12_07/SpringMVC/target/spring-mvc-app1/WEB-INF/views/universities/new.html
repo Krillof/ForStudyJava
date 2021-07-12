@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New university</title>
+</head>
+<body>
+
+  <form th:method="POST" th:action="@{/universities}" th:object="${university}">
+        <label for="name">Enter name</label>
+        <input type="text" th:field="*{name}" id="name"/>
+      <br/>
+         <label for="average_exams_score">Enter average ЕГЭ за 3 предмета score</label>
+         <input type="text" th:field="*{average_exams_score}" id="average_exams_score"/>
+
+      <br/>
+          <label for="city">Enter city </label>
+          <input type="text" th:field="*{city}" id="city"/>
+
+      <br/>
+        <input type="submit" value="Create!"/>
+  </form>
+
+</body>
+</html>
