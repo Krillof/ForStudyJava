@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"  xmlns:th="http://www.thymeleaf.org">
+    <style>
+        table {
+            border: 2px solid steelblue;
+            background: cadetblue;
+        }
+
+        td{
+            border: 1px solid steelblue;
+            background: lightcyan;
+        }
+
+        th {
+            border: 1px solid steelblue;
+            background: lightskyblue;
+        }
+    </style>
+    <title>Task </title>
+</head>
+<body>
+    <table>
+        <thead th:utext="${header}">
+
+        </thead>
+        <tbody th:each="value : ${values}">
+            <tr th:utext="${value.show()}">...</tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

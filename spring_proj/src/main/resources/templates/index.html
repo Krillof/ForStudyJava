@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"  xmlns:th="http://www.thymeleaf.org">
+    <style>
+        table {
+            border: 2px solid steelblue;
+            background: cadetblue;
+        }
+
+        td{
+            border: 1px solid steelblue;
+            background: lightcyan;
+        }
+
+        th {
+            border: 1px solid steelblue;
+            background: lightskyblue;
+        }
+    </style>
+    <title>Main</title>
+</head>
+<body>
+
+    <h3>Competitions:</h3>
+    <table>
+        <thead th:utext="${competitions_h}">
+
+        </thead>
+        <tbody th:each="value : ${competitions}">
+        <tr th:utext="${value.show()}">...</tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Results:</h3>
+    <table>
+        <thead th:utext="${results_h}">
+
+        </thead>
+        <tbody th:each="value : ${results}">
+        <tr th:utext="${value.show()}">...</tr>
+        </tbody>
+    </table>
+
+
+
+    <h3>Sportsmans:</h3>
+    <table>
+        <thead th:utext="${sportsmans_h}">
+
+        </thead>
+        <tbody th:each="value : ${sportsmans}">
+        <tr th:utext="${value.show()}">...</tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <h3>Tasks:</h3>
+    <p><a href="/task/1">first</a></p>
+    <p><a href="/task/2">second</a></p>
+    <p><a href="/task/3">third</a></p>
+    <p><a href="/task/4">fourth</a></p>
+    <p><a href="/task/5">fifth</a></p>
+    <p><a href="/task/6">sixth</a></p>
+    <p><a href="/task/7">seventh</a></p>
+    <p><a href="/task/8">eighth</a></p>
+    <p><a href="/task/9">ninth</a></p>
+    <p><a href="/task/10">tenth</a></p>
+    <p><a href="/task/11">eleventh</a></p>
+    <p><a href="/task/12">twelfth</a></p>
+
+</body>
+</html>

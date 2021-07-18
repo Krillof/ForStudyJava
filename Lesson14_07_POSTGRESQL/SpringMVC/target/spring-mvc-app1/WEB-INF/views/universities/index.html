@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All universities</title>
+</head>
+<body>
+
+    <div th:each="uni : ${universities}">
+        <a th:href="@{/universities/{id}(id=${uni.getNumber()})}" th:text="${uni.getName()}"></a>
+    </div>
+
+</body>
+</html>
