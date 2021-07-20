@@ -8,4 +8,7 @@ import org.springframework.data.repository.query.Param;
 public interface Repository extends JpaRepository<CarNumber, String> {
     @Query("select count(a) from CarNumber a where a.number = :number")
     Integer getAlike(@Param("number") String number);
+
+    @Query("select count(a) from CarNumber a")
+    Integer getAmount();
 }

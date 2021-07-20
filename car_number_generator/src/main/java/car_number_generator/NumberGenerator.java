@@ -11,6 +11,8 @@ public class NumberGenerator {
 
     public static String last_number = "А000АА 116 RUS";
 
+    public static final int NUMBERS_AMOUNT = 1728000;
+
     static {
         random = new Random();
         symbols = new ArrayList<>();

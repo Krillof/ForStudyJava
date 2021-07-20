@@ -20,26 +20,29 @@ public class MainController {
         this.service = service;
     }
 
-
     @GetMapping("/random")
     @ResponseBody
     public String random(Model model){
-        String number;
-        do number = NumberGenerator.getRandom();
-        while (service.getAlike(number) != 0);
-        service.addCarNumber(new CarNumber(number));
-        model.addAttribute("number", number);
+        String number = "There is no more numbers!";
+        if (service.getAmount() < NumberGenerator.NUMBERS_AMOUNT){
+            do number = NumberGenerator.getRandom();
+            while (service.getAlike(number) != 0);
+            service.addCarNumber(new CarNumber(number));
+            model.addAttribute("number", number);
+        }
         return number;
     }
 
     @GetMapping("/next")
     @ResponseBody
     public String next(Model model){
-        String number;
-        do number = NumberGenerator.getNext();
-        while (service.getAlike(number) != 0);
-        service.addCarNumber(new CarNumber(number));
-        model.addAttribute("number", number);
+        String number = "There is no more numbers!";
+        if (service.getAmount() < NumberGenerator.NUMBERS_AMOUNT){
+            do number = NumberGenerator.getNext();
+            while (service.getAlike(number) != 0);
+            service.addCarNumber(new CarNumber(number));
+            model.addAttribute("number", number);
+        }
         return number;
     }
 

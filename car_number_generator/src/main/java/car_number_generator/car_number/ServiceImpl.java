@@ -19,6 +19,11 @@ public class ServiceImpl implements Service{
     }
 
     @Override
+    public Integer getAmount() {
+        return repository.getAmount();
+    }
+
+    @Override
     public void addCarNumber(CarNumber carNumber) {
         repository.saveAndFlush(carNumber);
     }
