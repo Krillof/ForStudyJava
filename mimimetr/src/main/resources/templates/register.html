@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Register</title>
+</head>
+<body>
+<h2>Register</h2>
+<form th:action="@{/register}" method="POST">
+    <div class="mb-3">
+        <label for="nameInput" class="form-label">Login</label>
+        <input type="text" name="username" class="form-control" id="nameInput" aria-describedby="emailHelp">
+        <!--div id="nameInfo" class="form-text">We'll never share your email with anyone else.</div-->
+    </div>
+    <div class="mb-3">
+        <label for="passwordInput" class="form-label">Password</label>
+        <input type="text" name="password" class="form-control" id="passwordInput" aria-describedby="emailHelp">
+        <!--div id="passwordInfo" class="form-text">We'll never share your email with anyone else.</div-->
+    </div>
+    <button type="submit" value="Log in" class="btn btn-primary">Submit</button>
+</form>
+<hr>
+<a href="/login">Return to login</a>
+
+</body>
+</html>
