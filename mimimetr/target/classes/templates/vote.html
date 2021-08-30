@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vote</title>
+</head>
+<body>
+<h2>Who is better?</h2>
+<table>
+    <tr>
+        <td>
+            <div th:text="${cur_cat.getName()}"></div>
+            <div>
+                <img width="400px" th:src="${cur_cat.getStrForGettingPicture()}">
+            </div>
+        </td>
+        <td>
+            <div th:text="${sub_cat.getName()}"></div>
+            <div>
+                <img width="400px" th:src="${sub_cat.getStrForGettingPicture()}">
+            </div>
+        </td>
+    </tr>
+</table>
+<form th:action="@{/vote}" method="GET">
+    <div>
+        <h5>First</h5>
+        <input type="radio" name="cat_num" checked value="1"/>
+    </div>
+    <div>
+        <h5>Second</h5>
+        <input type="radio" name="cat_num" value="2"/>
+    </div>
+
+    <button type="submit">Choose</button>
+</form>
+
+</body>
+</html>
